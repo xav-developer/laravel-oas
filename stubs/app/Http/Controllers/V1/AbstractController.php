@@ -16,12 +16,12 @@ use OpenApi\Attributes as OA;
         ),
         security: [
             [
-                'jwt' => [],
+                'access-token' => [],
             ],
         ],
     ),
     OA\SecurityScheme(
-        securityScheme: 'jwt',
+        securityScheme: 'access-token',
         type: 'http',
         in: 'header',
         scheme: 'bearer'
