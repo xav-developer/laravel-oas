@@ -32,7 +32,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "OasServiceProvider"
+                "Krok\\Oas\\OasServiceProvider"
             ]
         }
     },
