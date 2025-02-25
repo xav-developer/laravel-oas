@@ -36,7 +36,6 @@ class InstallCommand extends Command
         $filesystem->copyDirectory(__DIR__ . '/../../stubs/resources', base_path('resources'));
         $filesystem->copyDirectory(__DIR__ . '/../../stubs/routes', base_path('routes'));
 
-        $this->line('');
         $this->info('OAS scaffolding installed successfully.');
 
         return 0;
