@@ -6,13 +6,7 @@ The preferred way to install this extension is through [composer](http://getcomp
 Either run
 
 ```
-php composer.phar require --prefer-dist krok/laravel-oas "*"
-```
-
-or add
-
-```
-"krok/laravel-oas": "*"
+php composer.phar require --prefer-dist krok/laravel-oas --dev
 ```
 
 ## License
