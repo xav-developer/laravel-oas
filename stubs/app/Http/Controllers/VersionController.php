@@ -18,7 +18,7 @@ class VersionController
         $generator = (new Generator())
             ->generate([
                 app_path('Http/Controllers'),
-                app_path('Http/Requests'),
+                // app_path('Http/Requests'),
                 app_path('Http/Resources'),
             ]);
 
