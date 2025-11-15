@@ -6,6 +6,13 @@ use App\Http\Controllers\SwaggerController;
 use App\Http\Controllers\VersionController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/oas/swagger', SwaggerController::class)->name('oas.swagger');
+Route::group([
+    'prefix' => '/oas',
+    'as' => 'oas.',
+], static function (): void {
+    Route::get('/swagger', SwaggerController::class)
+        ->name('swagger');
 
-Route::get('/oas/version/v1.json', [VersionController::class, 'v1'])->name('oas.version.v1');
+    Route::get('/api.json', [VersionController::class, 'api'])
+        ->name('api');
+});

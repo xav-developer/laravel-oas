@@ -13,16 +13,30 @@ class VersionController
     /**
      * @return Response
      */
-    public function v1(): Response
+    public function api(): Response
     {
-        $generator = Generator::scan([
-            app_path('Http/Controllers/V1'),
-            app_path('Http/Resources/V1'),
-        ]);
+        $generator = (new Generator())
+            ->generate([
+                app_path('Http/Controllers'),
+                app_path('Http/Requests'),
+                app_path('Http/Resources'),
+            ]);
 
-        $generator->servers = [
-            new OA\Server(url('/api/v1'), config('app.name')),
-        ];
+        $generator
+            ->servers = [
+                new OA\Server(url('/api'), config('app.name')),
+            ];
+
+        $generator
+            ->components
+            ->securitySchemes = [
+                new OA\SecurityScheme(
+                    securityScheme: 'jwt',
+                    type: 'http',
+                    in: 'header',
+                    scheme: 'bearer'
+                ),
+            ];
 
         return response(
             content: $generator->toJson(),

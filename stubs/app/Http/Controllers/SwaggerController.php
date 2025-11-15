@@ -16,7 +16,7 @@ class SwaggerController
         return view('oas/swagger', [
             'urls' => json_encode([
                 [
-                    'url' => route('oas.version.v1'),
+                    'url' => route('oas.api'),
                     'name' => '1.0.0',
                 ],
             ], JSON_UNESCAPED_SLASHES),

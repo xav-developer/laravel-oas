@@ -16,5 +16,11 @@ php composer.phar require --prefer-dist krok/laravel-oas --dev
 ## Install
 
 ```
-php artisan install:oas
+php artisan oas:install
+```
+
+Removing the dependency
+
+```
+php composer.phar remove krok/laravel-oas --dev
 ```
